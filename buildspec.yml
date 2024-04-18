@@ -1,0 +1,19 @@
+commands:
+  01_update_apt:
+    command: apt-get update -y
+
+  02_install_composer:
+    command: |
+      curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+  03_install_dependencies:
+    command: |
+      apt-get install -y libpq-dev libzip-dev php-pgsql
+
+  04_install_composer_setup:
+    command: |
+      curl -sS https://getcomposer.org/installer -o composer-setup.php
+      php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+  05_composer_update:
+    command: composer update
