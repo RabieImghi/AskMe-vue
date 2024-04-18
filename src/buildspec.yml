@@ -1,16 +1,15 @@
-commands:
-  01_update_apt:
-    command: apt-get update -y
-
-  02_install_nodejs:
-    command: apt-get install -y nodejs npm
-
-  03_install_global_packages:
-    command: npm install -g yarn
-
-container_commands:
-  01_yarn_install:
-    command: yarn install
-
-  02_build_application:
-    command: yarn build
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Deploying to AWS S3...
+      - aws s3 sync dist/ s3://AskMe
