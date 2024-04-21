@@ -57,8 +57,8 @@
             </ul> 
         </nav>
         <div class="profil dropdown d-flex gap-2 align-items-center">
-            <div class="info d-flex flex-column" v-if="tokenExists">
-                <span class="fw-bold">{{userName}}</span>
+            <div class="info d-flex flex-column dropdown-toggle" id="dropdown2" data-bs-toggle="dropdown" v-if="tokenExists">
+                <span class="fw-bold cursor-point">{{userName}}</span>
                 <button :class="userBadge"  class="btnLevel">{{userBadge}}</button>
             </div>
             <div class="image-user dropdown-toggle" id="dropdown2" data-bs-toggle="dropdown" aria-expanded="false">
