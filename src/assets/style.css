@@ -23,7 +23,7 @@ body{background-color: #FDFEF9 !important;}
 .translateEffect:hover{transform: translate(0, -10px); transition-duration: 0.7s;background: rgba(190, 190, 190, 0.17) !important;}
 hr{color: lightgray !important;}
 .QuestionSection{
-    height: calc(100vh - 80px) !important;
+    min-height: calc(100vh - 80px) !important;
 }
 .questiondisplay{
     display: grid !important;
