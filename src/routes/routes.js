@@ -117,7 +117,7 @@ function extractURIs(routes, parentPath = '') {
 }
 const routerURIs = extractURIs(routes);
 
-axios.post(`http://127.0.0.1:8000/api/PermissionVueJs`, {router: routerURIs});
+axios.post(`https://rabie.coders-strike.tech/api/PermissionVueJs`, {router: routerURIs});
 
 // router.beforeEach((to, from, next) => {
 //     const store = useStore();
