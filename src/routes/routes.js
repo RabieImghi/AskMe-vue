@@ -102,21 +102,22 @@ const router = createRouter({
 });
 
 
-function extractURIs(routes, parentPath = '') {
-    const URIs = [];
-    routes.forEach(route => { 
-        const fullPath = parentPath + route.path; 
-        if (route.children) {
-            URIs.push(fullPath);
-            URIs.push(...extractURIs(route.children, fullPath + '/'));   
-        } else {
-            URIs.push(fullPath);
-        }
-    });
-    return URIs;
-}
-const routerURIs = extractURIs(routes);
+// function extractURIs(routes, parentPath = '') {
+//     const URIs = [];
+//     routes.forEach(route => { 
+//         const fullPath = parentPath + route.path; 
+//         if (route.children) {
+//             URIs.push(fullPath);
+//             URIs.push(...extractURIs(route.children, fullPath + '/'));   
+//         } else {
+//             URIs.push(fullPath);
+//         }
+//     });
+//     return URIs;
+// }
+// const routerURIs = extractURIs(routes);
 
+// axios.post(`https://rabie.coders-strike.tech/api/PermissionVueJs`, {router: routerURIs});
 
 // router.beforeEach((to, from, next) => {
 //     const store = useStore();
