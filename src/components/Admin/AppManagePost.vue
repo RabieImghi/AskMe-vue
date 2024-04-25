@@ -167,20 +167,20 @@ export default {
             if(this.skip < this.count - 6){
                 this.skip += 6;
                 this.page += 1;
-                this.getTages(); 
+                this.getPost(); 
             }
         },
         previewsPage(){
             if(this.skip >= 6){
                 this.skip -= 6;
                 this.page -= 1;
-                this.getTages();
+                this.getPost();
             }
         },
         getPage(page){
             this.skip = page * 6 - 6;
             this.page = page;
-            this.getTages();
+            this.getPost();
         },
     },
 }
